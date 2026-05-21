@@ -1,4 +1,4 @@
-CREATE OR REFRESH STREAMING TABLE ECOMMERCE.SILVER.ORDERS
+CREATE OR REFRESH STREAMING TABLE ECOMMERCE.SILVER.ORDERS_ENRICHED
 (
     -- CONSTRAINT valid_customer_id EXPECT (customer_id IS NOT NULL) ON VIOLATION FAIL UPDATE,
     CONSTRAINT valid_customer_id EXPECT (customer_id IS NOT NULL) ON VIOLATION DROP ROW,
@@ -20,4 +20,4 @@ member_since,
 telephone,
 to_timestamp(created_timestamp, 'yyyy-MM-dd HH:mm:ss') AS created_timestamp,
 current_timestamp() AS load_timestamp
-FROM STREAM(LIVE.ECOMMERCE.BRONZE.ORDERS)
+FROM STREAM(LIVE.ECOMMERCE.BRONZE.ORDERS_RAW)
