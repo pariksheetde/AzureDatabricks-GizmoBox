@@ -4,7 +4,7 @@ CREATE OR REFRESH STREAMING TABLE CIRCUIT.SILVER.ORDERS_ENRICHED
     CONSTRAINT valid_order_id EXPECT (order_id IS NOT NULL) ON VIOLATION DROP ROW,
     CONSTRAINT valid_customer_id EXPECT (customer_id IS NOT NULL) ON VIOLATION DROP ROW,
     CONSTRAINT valid_order_status EXPECT (order_status IS NOT NULL) ON VIOLATION DROP ROW,
-    CONSTRAINT valid_payment_method EXPECT (payment_method IN ('Credit Card', 'Bank Transfer','PayPal')) ON VIOLATION DROP ROW
+    CONSTRAINT valid_payment_method EXPECT (payment_method IN ('Credit Card', 'Bank Transfer','PayPal'))
 )
 TBLPROPERTIES ('layer' = 'silver')
 AS
