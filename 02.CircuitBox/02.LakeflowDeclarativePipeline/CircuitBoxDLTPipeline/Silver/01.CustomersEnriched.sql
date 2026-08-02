@@ -20,4 +20,4 @@ email,
 telephone,
 created_date,
 current_timestamp() AS load_timestamp
-FROM STREAM(LIVE.CIRCUIT.BRONZE.CUSTOMERS_RAW)
+FROM STREAM(CIRCUIT.BRONZE.CUSTOMERS_RAW)

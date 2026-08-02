@@ -21,5 +21,5 @@ order_status,
 explode(items) AS item,
 order_timestamp,
 load_timestamp
- FROM STREAM(LIVE.CIRCUIT.SILVER.ORDERS_ENRICHED)
+ FROM STREAM(CIRCUIT.SILVER.ORDERS_ENRICHED)
 )
