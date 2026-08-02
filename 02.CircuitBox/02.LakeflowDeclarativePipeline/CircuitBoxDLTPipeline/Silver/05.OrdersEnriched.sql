@@ -16,4 +16,4 @@ payment_method,
 items,
 order_status,
 current_timestamp() AS load_timestamp
-FROM STREAM(LIVE.CIRCUIT.BRONZE.ORDERS_RAW)
+FROM STREAM(CIRCUIT.BRONZE.ORDERS_RAW)

@@ -14,8 +14,8 @@ sum(oi.item_price * oi.item_quantity) AS total_order_amount,
 count(distinct oi.order_id) AS total_orders,
 sum(oi.item_quantity) AS total_items
 FROM
-LIVE.CIRCUIT.SILVER.ORDERS_ITEMS AS oi INNER JOIN LIVE.CIRCUIT.SILVER.CUSTOMERS_SCD1 AS cust
-ON oi.customer_id = cust.customer_id INNER JOIN LIVE.CIRCUIT.SILVER.ADDRESSES_SCD2 AS addr
+CIRCUIT.SILVER.ORDERS_ITEMS AS oi INNER JOIN CIRCUIT.SILVER.CUSTOMERS_SCD1 AS cust
+ON oi.customer_id = cust.customer_id INNER JOIN CIRCUIT.SILVER.ADDRESSES_SCD2 AS addr
 ON addr.customer_id = cust.customer_id
 AND addr.`__END_AT` IS NULL
 GROUP BY ALL;
